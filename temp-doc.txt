@@ -1,0 +1,14 @@
+5.1. 
+The 'cp' command is used to copy files. In this case, where the command was 'cp ../temp-* .', 'cp' means copy of files; '../' means the parent directory (the directory above the current one); 'temp-*' selects all files whose names start with 'temp-'; '.' means the current directory. Therefore, it copies the 'temp-*' files from the parent directory to the current directory.
+
+In my case, the 'project_git' and 'greends-fads-first-project' folders were in the same parent directory, rather than one being inside the other. Therefore, I used 'cp project_git/temp-* greends-fads-first-project/'. 'project_git/temp-*' selects all files in the 'project_git' folder whose names start with 'temp-', and 'greends-fads-first-project/' is the destination folder. Therefore, the three files 'temp-average.py', 'temp-data.csv' and 'temp-doc.txt' were copied to the 'greends-fads-first-project' folder.
+
+
+5.2.
+It wasn't necessary to use 'git init' because 'greends-fads-first-project' was already a Git repository. Cloning the repository form GitHub had already created the local repository and its Git configuration.
+
+
+5.3.
+Yes. After copying the files into the repository, Git recognized them as untracked files. Before committing them, I had to add them to the staging area using git add. Then, I used git commit to save these changes in the repository.
+	> git add temp-average.py temp-data.csv temp-doc.txt
+	> git commit -m "add temporary files"
